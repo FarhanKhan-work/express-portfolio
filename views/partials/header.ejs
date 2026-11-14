@@ -1,0 +1,47 @@
+<!--
+  views/partials/header.ejs
+  this is my navbar, it shows at the top of every page
+  the layout file includes it so I only have to write it once
+-->
+<header>
+  <!-- Bootstrap navbar, navbar-expand-lg means it turns into a menu button on small screens -->
+  <!-- sticky-top keeps it stuck at the top when you scroll -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-navy sticky-top shadow-sm">
+    <div class="container">
+
+      <!-- my logo and name on the left, clicking it goes back home -->
+      <a class="navbar-brand fw-bold" href="/">
+        <img src="/images/logo.svg" alt="FK logo" width="34" height="34" class="me-2">
+        <%= siteOwner %>
+      </a>
+
+      <!-- the menu button (three lines) that only shows on phones -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- my nav links, ms-auto pushes them to the right side -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+
+          <!-- each link checks the page value from the route -->
+          <!-- if it matches, it adds the active class so that link turns blue -->
+          <li class="nav-item">
+            <a class="nav-link <%= page === 'home' ? 'active' : '' %>" href="/"><i class="fa-solid fa-house me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= page === 'about' ? 'active' : '' %>" href="/about"><i class="fa-solid fa-user me-1"></i> About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= page === 'projects' ? 'active' : '' %>" href="/projects"><i class="fa-solid fa-folder-open me-1"></i> Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= page === 'contact' ? 'active' : '' %>" href="/contact"><i class="fa-solid fa-envelope me-1"></i> Contact Me</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
