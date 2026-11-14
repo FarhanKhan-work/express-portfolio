@@ -1,0 +1,5 @@
+<!-- the little icon in the browser tab, same as my logo but the colours are swapped -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0b1d33"/>
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0dcaf0" text-anchor="middle">FK</text>
+</svg>

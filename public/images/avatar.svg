@@ -1,0 +1,24 @@
+<!-- the network picture I use on the Home and About pages -->
+<!-- it's 4 devices connected to a shield in the middle, like a secure network -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- the blue lines connecting everything -->
+  <g stroke="#0dcaf0" stroke-width="3" opacity="0.8">
+    <line x1="150" y1="150" x2="60" y2="70"/>
+    <line x1="150" y1="150" x2="240" y2="70"/>
+    <line x1="150" y1="150" x2="60" y2="230"/>
+    <line x1="150" y1="150" x2="240" y2="230"/>
+    <line x1="60" y1="70" x2="240" y2="70"/>
+    <line x1="60" y1="230" x2="240" y2="230"/>
+  </g>
+  <!-- blue circle in the middle -->
+  <circle cx="150" cy="150" r="42" fill="#0dcaf0"/>
+  <!-- the shield shape inside the circle -->
+  <path d="M150 122 l22 9 v17 c0 15 -10 25 -22 30 c-12 -5 -22 -15 -22 -30 v-17 z" fill="#0b1d33"/>
+  <!-- the 4 devices in the corners -->
+  <g fill="#13345a" stroke="#0dcaf0" stroke-width="3">
+    <rect x="38" y="50" width="44" height="40" rx="8"/>
+    <rect x="218" y="50" width="44" height="40" rx="8"/>
+    <rect x="38" y="210" width="44" height="40" rx="8"/>
+    <rect x="218" y="210" width="44" height="40" rx="8"/>
+  </g>
+</svg>
