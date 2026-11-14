@@ -1,11 +1,88 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<!--
+  views/index.ejs
+  this is my Home page
+  it shows when someone goes to "/" or "/home"
+  the layout adds the header and footer around it automatically
+-->
+
+<!-- HERO SECTION, the big dark part at the top -->
+<!-- hero is my own class from style.css, d-flex and align-items-center center everything up and down -->
+<section class="hero text-light d-flex align-items-center">
+  <div class="container py-5">
+    <!-- Bootstrap row, splits it into columns -->
+    <div class="row align-items-center g-5">
+
+      <!-- left side with my intro text, takes 7 out of 12 columns on big screens -->
+      <div class="col-lg-7">
+        <!-- small blue line above my name with a shield icon -->
+        <p class="text-info fw-semibold mb-2"><i class="fa-solid fa-shield-halved me-2"></i>Networking &amp; IT Security</p>
+
+        <!-- my name, siteOwner comes from app.locals -->
+        <h1 class="display-4 fw-bold">Hi, I'm <%= siteOwner %>.</h1>
+
+        <!-- short intro about me, lead makes the text a bit bigger -->
+        <p class="lead mt-3">
+          I'm a Networking and IT Security student at Ontario Tech University. I build and secure networks,
+          set up IT for small businesses, and run a couple of my own ventures on the side.
+        </p>
+
+        <!-- two buttons that link to my other pages -->
+        <div class="mt-4 d-flex flex-wrap gap-3">
+          <a href="/projects" class="btn btn-info btn-lg"><i class="fa-solid fa-folder-open me-2"></i>View My Projects</a>
+          <a href="/contact" class="btn btn-outline-light btn-lg"><i class="fa-solid fa-paper-plane me-2"></i>Get In Touch</a>
+        </div>
+      </div>
+
+      <!-- right side with my network picture, takes the other 5 columns -->
+      <div class="col-lg-5 text-center">
+        <!-- img-fluid makes it shrink on small screens, hero-img makes it float up and down -->
+        <img src="/images/avatar.svg" alt="Illustration of a network" class="img-fluid hero-img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MISSION SECTION -->
+<section class="container my-5 text-center">
+  <h2 class="section-title">My Mission</h2>
+  <!-- col-lg-8 mx-auto keeps the text narrow and centered -->
+  <p class="col-lg-8 mx-auto text-muted fs-5">
+    To build reliable, secure infrastructure that people never have to think about, and to keep
+    learning by solving real problems for real businesses.
+  </p>
+</section>
+
+<!-- 3 CARDS showing what I do -->
+<section class="container">
+  <div class="row g-4">
+
+    <!-- card 1, col-md-4 means 3 cards per row on medium screens and up -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm feature-card text-center p-4">
+        <i class="fa-solid fa-network-wired fa-2x text-info mb-3"></i>
+        <h5 class="fw-bold">Networking</h5>
+        <p class="text-muted mb-0">Routing, switching, troubleshooting and network monitoring.</p>
+      </div>
+    </div>
+
+    <!-- card 2 -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm feature-card text-center p-4">
+        <i class="fa-solid fa-lock fa-2x text-info mb-3"></i>
+        <h5 class="fw-bold">Security</h5>
+        <p class="text-muted mb-0">MFA rollouts, backups, cryptography and hardening.</p>
+      </div>
+    </div>
+
+    <!-- card 3 -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm feature-card text-center p-4">
+        <i class="fa-solid fa-cloud fa-2x text-info mb-3"></i>
+        <h5 class="fw-bold">Cloud &amp; Web</h5>
+        <p class="text-muted mb-0">Linux containers, Node.js, Express and cloud deployments.</p>
+      </div>
+    </div>
+
+  </div>
+</section>

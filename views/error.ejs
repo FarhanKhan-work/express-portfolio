@@ -1,3 +1,22 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!--
+  views/error.ejs
+  this is my error page
+  it shows when someone goes to a page that doesn't exist (404) or something breaks
+  the error handler at the bottom of app.js renders it
+-->
+<section class="container text-center my-5 py-5">
+  <!-- big warning icon -->
+  <i class="fa-solid fa-triangle-exclamation fa-4x text-warning mb-4"></i>
+
+  <!-- shows the error number and message, like "404 Not Found" -->
+  <h1 class="fw-bold"><%= error.status || '' %> <%= message %></h1>
+  <p class="text-muted">The page you're looking for doesn't exist.</p>
+
+  <!-- button to go back home -->
+  <a href="/" class="btn btn-info mt-3"><i class="fa-solid fa-house me-2"></i>Back to Home</a>
+
+  <!-- the full error details only show when I'm testing on my own computer -->
+  <% if (error.stack) { %>
+    <pre class="text-start mt-5 small bg-light p-3 rounded"><%= error.stack %></pre>
+  <% } %>
+</section>

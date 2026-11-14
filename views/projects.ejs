@@ -1,0 +1,47 @@
+<!--
+  views/projects.ejs
+  this is my Projects page
+  it shows when someone goes to "/projects"
+  the projects array comes from my route in routes/index.js
+  instead of writing 6 cards by hand I loop through the array and make one card for each project
+-->
+
+<!-- banner at the top -->
+<section class="page-banner text-light text-center py-5">
+  <h1 class="fw-bold"><i class="fa-solid fa-folder-open me-2"></i>Projects</h1>
+  <p class="mb-0">A few things I've built, studied and run.</p>
+</section>
+
+<section class="container my-5">
+  <div class="row g-4">
+
+    <!-- forEach goes through every project in the array one by one -->
+    <% projects.forEach(function (project) { %>
+
+      <!-- 1 card per row on phones, 2 on tablets, 3 on laptops -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm project-card">
+          <div class="card-body p-4">
+            <!-- the icon for this project, the icon name comes from the array -->
+            <div class="project-icon mb-3"><i class="fa-solid <%= project.icon %>"></i></div>
+            <!-- project name -->
+            <h5 class="card-title fw-bold"><%= project.title %></h5>
+            <!-- project description -->
+            <p class="card-text text-muted"><%= project.description %></p>
+          </div>
+
+          <!-- tags at the bottom of the card -->
+          <div class="card-footer bg-transparent border-0 px-4 pb-4">
+            <!-- another loop, this time through the tags of this one project -->
+            <% project.tags.forEach(function (tag) { %>
+              <span class="badge bg-light text-dark border me-1 mb-1"><%= tag %></span>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+    <% }) %>
+    <!-- end of the loop -->
+
+  </div>
+</section>

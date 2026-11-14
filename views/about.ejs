@@ -1,0 +1,60 @@
+<!--
+  views/about.ejs
+  this is my About Me page
+  it shows when someone goes to "/about"
+-->
+
+<!-- dark banner at the top with the page title -->
+<section class="page-banner text-light text-center py-5">
+  <h1 class="fw-bold"><i class="fa-solid fa-user me-2"></i>About Me</h1>
+</section>
+
+<section class="container my-5">
+  <div class="row g-5 align-items-center">
+
+    <!-- left side, picture and LinkedIn button -->
+    <div class="col-md-4 text-center">
+      <img src="/images/avatar.svg" alt="Illustration" class="img-fluid rounded-4 shadow about-img">
+      <!-- button that opens my LinkedIn in a new tab -->
+      <a href="<%= linkedinUrl %>" class="btn btn-info mt-4" target="_blank" rel="noopener">
+        <i class="fa-brands fa-linkedin me-2"></i>Connect on LinkedIn
+      </a>
+    </div>
+
+    <!-- right side, all my info -->
+    <div class="col-md-8">
+      <h2 class="fw-bold"><%= siteOwner %></h2>
+      <p class="text-info fw-semibold">Networking &amp; IT Security Student, Ontario Tech University</p>
+
+      <!-- a few paragraphs about me -->
+      <p>
+        I'm studying Networking and IT Security at Ontario Tech University in Oshawa and I'm on the Dean's Honours List.
+        I'm starting a co-op with Flair Airlines in Winter 2027.
+      </p>
+      <p>
+        Outside of class I handle IT for a construction company, where I built everything from scratch: staff laptops,
+        email accounts, MFA, backups and documentation. I'm also VP of Operations and Training at the ACE Club and an
+        active member of NetSoc.
+      </p>
+      <p>
+        I like running things end to end, which is why I also run Jamalzai Enterprise (beverage distribution) and
+        CrystalClear Window Cleaning in Durham Region.
+      </p>
+
+      <!-- my skills as little badges with icons -->
+      <h5 class="fw-bold mt-4">Skills</h5>
+      <!-- flex-wrap lets the badges go to the next line if there's no room -->
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge skill-badge"><i class="fa-solid fa-network-wired me-1"></i> Cisco / Routing</span>
+        <span class="badge skill-badge"><i class="fa-brands fa-linux me-1"></i> Linux</span>
+        <span class="badge skill-badge"><i class="fa-solid fa-shield-halved me-1"></i> Security</span>
+        <span class="badge skill-badge"><i class="fa-brands fa-node-js me-1"></i> Node.js / Express</span>
+        <span class="badge skill-badge"><i class="fa-brands fa-js me-1"></i> JavaScript</span>
+        <span class="badge skill-badge"><i class="fa-brands fa-bootstrap me-1"></i> Bootstrap</span>
+        <span class="badge skill-badge"><i class="fa-solid fa-database me-1"></i> MongoDB</span>
+        <span class="badge skill-badge"><i class="fa-brands fa-microsoft me-1"></i> Microsoft 365</span>
+      </div>
+    </div>
+
+  </div>
+</section>

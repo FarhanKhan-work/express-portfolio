@@ -1,0 +1,94 @@
+<!--
+  views/contact.ejs
+  this is my Contact Me page
+  it shows when someone goes to "/contact"
+  when the form is submitted it goes to my router.post('/contact') route
+  that route sends sent = true so the thank you message shows
+-->
+
+<!-- banner at the top -->
+<section class="page-banner text-light text-center py-5">
+  <h1 class="fw-bold"><i class="fa-solid fa-envelope me-2"></i>Contact Me</h1>
+  <p class="mb-0">Questions, opportunities or just want to connect? Send me a message.</p>
+</section>
+
+<section class="container my-5">
+  <div class="row g-5">
+
+    <!-- LEFT SIDE, my contact info -->
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm p-4 h-100">
+        <h5 class="fw-bold mb-4">Reach Me</h5>
+        <!-- email, clicking it opens their email app -->
+        <p><i class="fa-solid fa-envelope text-info me-2"></i><a href="mailto:<%= email %>"><%= email %></a></p>
+        <!-- where I'm located -->
+        <p><i class="fa-solid fa-location-dot text-info me-2"></i>Oshawa, Ontario</p>
+        <!-- LinkedIn and GitHub, links come from app.locals -->
+        <p><i class="fa-brands fa-linkedin text-info me-2"></i><a href="<%= linkedinUrl %>" target="_blank" rel="noopener">LinkedIn</a></p>
+        <p class="mb-0"><i class="fa-brands fa-github text-info me-2"></i><a href="<%= githubUrl %>" target="_blank" rel="noopener">GitHub</a></p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE, the contact form -->
+    <div class="col-lg-8">
+
+      <!-- this only shows after the form is sent -->
+      <% if (sent) { %>
+        <div class="alert alert-success" role="alert">
+          <i class="fa-solid fa-circle-check me-2"></i>
+          <!-- if they typed a name it says "Thanks, [name]" otherwise just "Thanks" -->
+          Thanks<%= name ? ', ' + name : '' %>! Your message was received. I'll get back to you soon.
+        </div>
+      <% } %>
+
+      <!-- the form sends the data to /contact using POST -->
+      <!-- needs-validation and novalidate let my script.js handle checking the fields -->
+      <form action="/contact" method="POST" class="card border-0 shadow-sm p-4 needs-validation" novalidate>
+        <div class="row g-3">
+
+          <!-- name, required means they have to fill it in -->
+          <div class="col-md-6">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+            <!-- this red message shows if they leave it empty -->
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+
+          <!-- email, type email makes sure it looks like a real email -->
+          <div class="col-md-6">
+            <label for="emailInput" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailInput" name="email" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+
+          <!-- phone, not required -->
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Phone (optional)</label>
+            <input type="tel" class="form-control" id="phone" name="phone">
+          </div>
+
+          <!-- subject -->
+          <div class="col-md-6">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" required>
+            <div class="invalid-feedback">Please add a subject.</div>
+          </div>
+
+          <!-- message box -->
+          <div class="col-12">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            <div class="invalid-feedback">Please write a message.</div>
+          </div>
+
+          <!-- send button -->
+          <div class="col-12">
+            <button type="submit" class="btn btn-info btn-lg"><i class="fa-solid fa-paper-plane me-2"></i>Send Message</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
