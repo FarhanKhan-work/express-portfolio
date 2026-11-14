@@ -28,7 +28,7 @@ app.set('layout', 'layouts/layout');
 // app.locals can be used in any EJS file
 // I put my name and links here so if I need to change them I only change it once
 app.locals.siteOwner = 'Farhan Khan';
-app.locals.githubUrl = 'https://github.com/YOUR-GITHUB-USERNAME';
+app.locals.githubUrl = 'https://github.com/FarhanKhan-work';
 app.locals.linkedinUrl = 'https://www.linkedin.com/in/farhan-khan-2a32272b2';
 app.locals.email = 'Faarhankhan121@gmail.com';
 
