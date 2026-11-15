@@ -3,38 +3,77 @@
    Bootstrap does most of the work, this is just for my colours and extra effects */
 
 /* my main colours saved as variables so I can reuse them everywhere */
+/* I went with a black and emerald green theme, kind of a techy/security look */
 :root {
-  --navy: #0b1d33;       /* dark navy for the navbar, footer and banners */
-  --navy-light: #13345a; /* lighter navy for gradients and badges */
-  --accent: #0dcaf0;     /* bright blue for highlights */
+  --dark: #0f1412;         /* near black for the navbar, footer and banners */
+  --dark-light: #1c2a24;   /* dark green-grey for gradients and badges */
+  --accent: #10b981;       /* emerald green for highlights */
+  --accent-dark: #059669;  /* darker green for hovers and links */
 }
 
 /* whole page font and background colour */
 body {
   font-family: 'Poppins', sans-serif; /* the Google font I loaded in the layout */
-  background-color: #f6f8fb;          /* very light grey instead of plain white */
+  background-color: #f5f7f6;          /* very light grey-green instead of plain white */
 }
 
 /* my own class for the navbar and footer background */
-.bg-navy {
-  background-color: var(--navy);
+.bg-main {
+  background-color: var(--dark);
 }
+
+/* ---------- making Bootstrap use my green instead of its default blue ---------- */
+
+/* any text with text-info turns green */
+.text-info {
+  color: var(--accent) !important;
+}
+
+/* my main buttons */
+.btn-info {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--dark); /* dark text reads better on green than white does */
+}
+
+/* button gets a bit darker when you hover or click it */
+.btn-info:hover,
+.btn-info:focus {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+
+/* normal links on the page */
+a {
+  color: var(--accent-dark);
+}
+
+/* green glow around form boxes when you click into them */
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25);
+}
+
+/* ---------- navbar ---------- */
 
 /* makes the nav links change colour smoothly when you hover */
 .navbar .nav-link {
   transition: color 0.2s;
 }
 
-/* the link for the page you're on turns blue and bold */
+/* the link for the page you're on turns green and bold */
 .navbar .nav-link.active {
   color: var(--accent) !important; /* !important so it beats Bootstrap's colour */
   font-weight: 600;
 }
 
+/* ---------- home page ---------- */
+
 /* the big top section on the home page */
 .hero {
   min-height: 80vh; /* takes up most of the screen */
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
 }
 
 /* the network picture on the home page */
@@ -49,16 +88,20 @@ body {
   50% { transform: translateY(-12px); }
 }
 
-/* the dark banner at the top of About, Projects and Contact */
-.page-banner {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-}
-
 /* section headings like "My Mission" */
 .section-title {
   font-weight: 700;
   margin-bottom: 1rem;
 }
+
+/* ---------- other pages ---------- */
+
+/* the dark banner at the top of About, Projects and Contact */
+.page-banner {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+}
+
+/* ---------- cards ---------- */
 
 /* rounded corners on the home cards and project cards */
 .feature-card,
@@ -85,35 +128,37 @@ body {
   justify-content: center;
   font-size: 1.5rem;
   color: #fff;
-  background: linear-gradient(135deg, var(--navy-light), var(--accent));
+  background: linear-gradient(135deg, var(--dark-light), var(--accent));
 }
+
+/* ---------- about page ---------- */
 
 /* the picture on the About page */
 .about-img {
   max-width: 280px;
-  background: var(--navy); /* navy box behind the picture */
+  background: var(--dark); /* dark box behind the picture */
   padding: 1.5rem;
 }
 
 /* the skill badges on the About page */
 .skill-badge {
-  background-color: var(--navy-light);
+  background-color: var(--dark-light);
   font-weight: 400;
   font-size: 0.9rem;
   padding: 0.55em 0.9em;
 }
+
+/* ---------- footer ---------- */
 
 /* footer icons change colour smoothly */
 .social-links a {
   transition: color 0.2s;
 }
 
-/* footer icons turn blue when you hover them */
+/* footer icons turn green when you hover them */
 .social-links a:hover {
   color: var(--accent) !important;
 }
-
-
 
 /* back to top button, stays in the bottom right corner */
 #backToTop {
