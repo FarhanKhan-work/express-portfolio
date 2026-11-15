@@ -52,18 +52,20 @@ var projects = [
 
 // HOME PAGE
 // when someone goes to "/" (the main link of my site) this runs
+// res.render shows the index.ejs file from my views folder
+// title is what shows in the browser tab
+// page tells my navbar which link to make blue
+// featured is the first 3 projects so the home page can show a preview
 router.get('/', function (req, res, next) {
-  // res.render shows the index.ejs file from my views folder
-  // title is what shows in the browser tab
-  // page tells my navbar which link to make blue
-  res.render('index', { title: 'Home', page: 'home' });
+  res.render('index', { title: 'Home', page: 'home', featured: projects.slice(0, 3) });
 });
 
 // I also made "/home" go to the same home page
 // just in case someone types /home instead of the main link
 router.get('/home', function (req, res, next) {
-  res.render('index', { title: 'Home', page: 'home' });
+  res.render('index', { title: 'Home', page: 'home', featured: projects.slice(0, 3) });
 });
+
 
 // ABOUT ME PAGE
 // when someone goes to "/about" it shows my about.ejs page
