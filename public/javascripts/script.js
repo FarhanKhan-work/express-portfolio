@@ -31,4 +31,17 @@
       form.classList.add('was-validated');
     });
   });
+  
+  // BACK TO TOP BUTTON
+  var topBtn = document.getElementById('backToTop');
+  if (topBtn) {
+    // show the button after you scroll down 300px, hide it when you're near the top
+    window.addEventListener('scroll', function () {
+      topBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    // when you click it, scroll smoothly back to the top
+    topBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 })();

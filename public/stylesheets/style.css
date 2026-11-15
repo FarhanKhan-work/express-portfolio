@@ -112,3 +112,16 @@ body {
 .social-links a:hover {
   color: var(--accent) !important;
 }
+
+
+
+/* back to top button, stays in the bottom right corner */
+#backToTop {
+  position: fixed;  /* stays in the same spot when you scroll */
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  display: none;    /* hidden at first, script.js shows it */
+  z-index: 1000;    /* keeps it on top of everything */
+}
